@@ -15,6 +15,7 @@ export default function Signin() {
     try {
       // Make a POST request to the backend with email and password
       const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      localStorage.setItem('email',email);
 
       // If login is successful, redirect to the product list
       if (response.data.token) {
